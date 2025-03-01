@@ -2,17 +2,13 @@ package dev.java10x.CadastroDeNinjas.Ninjas.Model;
 
 import dev.java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 //ele transforma uma classe em uma entidade no DB
 @Entity
 @Table(name = "tb_cadastro")
