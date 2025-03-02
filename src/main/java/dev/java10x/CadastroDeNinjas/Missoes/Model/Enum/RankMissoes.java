@@ -1,4 +1,4 @@
-package dev.java10x.CadastroDeNinjas.Missoes;
+package dev.java10x.CadastroDeNinjas.Missoes.Model.Enum;
 
 public enum RankMissoes {
     E("Muito facil"),

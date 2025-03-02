@@ -1,6 +1,6 @@
 package dev.java10x.CadastroDeNinjas.Missoes.Model;
 
-import dev.java10x.CadastroDeNinjas.Missoes.RankMissoes;
+import dev.java10x.CadastroDeNinjas.Missoes.Model.Enum.RankMissoes;
 import dev.java10x.CadastroDeNinjas.Ninjas.Model.NinjaModel;
 import jakarta.persistence.*;
 import lombok.*;
