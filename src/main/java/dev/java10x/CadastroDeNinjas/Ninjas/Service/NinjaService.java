@@ -1,5 +1,7 @@
 package dev.java10x.CadastroDeNinjas.Ninjas.Service;
 
+import dev.java10x.CadastroDeNinjas.Missoes.Model.Enum.RankMissoes;
+import dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
 import dev.java10x.CadastroDeNinjas.Ninjas.Model.NinjaModel;
 import dev.java10x.CadastroDeNinjas.Ninjas.Repository.NinjaRepository;
 import org.springframework.stereotype.Service;
@@ -23,6 +25,10 @@ public class NinjaService {
     public NinjaModel listarPorId(Long id){
         Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
         return ninjaPorId.orElse(null);
+    }
+
+    public NinjaModel criarNinja(NinjaModel ninja){
+        return ninjaRepository.save(ninja);
     }
 
 }
