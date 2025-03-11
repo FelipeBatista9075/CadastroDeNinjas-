@@ -2,7 +2,6 @@ package dev.java10x.CadastroDeNinjas.Missoes.Contoller;
 
 import dev.java10x.CadastroDeNinjas.Missoes.Model.MissoesModel;
 import dev.java10x.CadastroDeNinjas.Missoes.Service.MissoesService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,12 +38,6 @@ public class MissaoController {
 
     @DeleteMapping("/deletar/{id}")
     public void deletarMissao(@PathVariable Long id){
-        missoesService.deletarMissao(id);
+        missoesService.deletar(id);
     }
-
-    @DeleteMapping("/tomanocuessaporra")
-    public void deletaEssaPorra(){
-        missoesService.deletaEssaPorra();
-    }
-
 }

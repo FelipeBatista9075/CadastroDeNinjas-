@@ -27,11 +27,7 @@ public class MissoesService {
         return missoesRepository.save(missoes);
     }
 
-    public void deletarMissao(long id){
+    public void deletar(long id){
         missoesRepository.deleteById(id);
-    }
-
-    public void deletaEssaPorra(){
-        missoesRepository.deleteAll();
     }
 }
