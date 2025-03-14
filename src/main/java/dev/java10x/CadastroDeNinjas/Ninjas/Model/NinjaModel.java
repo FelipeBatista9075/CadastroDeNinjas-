@@ -7,6 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@ToString(exclude = "missoes")
 //ele transforma uma classe em uma entidade no DB
 @Entity
 @Table(name = "tb_cadastro")
