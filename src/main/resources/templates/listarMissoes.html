@@ -1,7 +1,29 @@
-<!DOCTYPE html>
+<!
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Missoes</title>
 </head>
 <body>
+
+<h1>Lista de missoes</h1>
+<table>
+    <thead>
+    <tr>ID</tr>
+    <tr>nomeDaMissao</tr>
+    <tr>dificuldade</tr>
+    <tr>rank</tr>
+    </thead>
+    <tbody>
+    <tr th:each="missao: ${missoes}">
+        <td></td>
+        <td th:text="${missao.id}"></td>
+        <td th:text="${missao.nomeDaMissao}"></td>
+        <td th:text="${missao.dificuldade}"></td>
+        <td th:text="${missao.ninjas}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

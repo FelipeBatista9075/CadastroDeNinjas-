@@ -5,7 +5,6 @@ import dev.java10x.CadastroDeNinjas.Missoes.Service.MissoesService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
