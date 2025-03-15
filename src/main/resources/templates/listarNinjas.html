@@ -1,0 +1,33 @@
+<!
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lista de Ninjas</title>
+</head>
+<body>
+
+<h1>Lista de ninjas</h1>
+<table>
+    <thead>
+        <tr>ID</tr>
+        <tr>Nome</tr>
+        <tr>Idade</tr>
+        <tr>Email</tr>
+        <tr>Rank</tr>
+        <tr>Missoes</tr>
+    </thead>
+    <tbody>
+        <tr th:each="ninja: ${ninjas}">
+          <td></td>
+          <td th:text="${ninja.id}"></td>
+          <td th:text="${ninja.nome}"></td>
+          <td th:text="${ninja.idade}"></td>
+          <td th:text="${ninja.email}"></td>
+          <td th:text="${ninja.rank}"></td>
+          <td th:text="${ninja.missoes}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
