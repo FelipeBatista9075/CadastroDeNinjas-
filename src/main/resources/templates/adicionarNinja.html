@@ -1,0 +1,81 @@
+<!
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalhe do Ninjas</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      .form-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .mensagem {
+        padding: 10px;
+        background-color: #dff0d8;
+        color: #3c763d;
+        border: 1px solid #d6e9c6;
+        border-radius: 4px;
+        margin-bottom: 15px;
+      }
+  </style>
+</head>
+<body>
+<h1>Adicionar Novo Ninja</h1>
+<div class="form-container">
+  <div th:if="${mensagem}" class="mensagem" th:text="${mensagem}"></div>
+  <form th:action="@{/ninjas/ui/salvar}" th:object="${ninja}" method="post">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}" required/>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" th:field="*{email}" required/>
+
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade" th:field="*{idade}" required/>
+
+    <label for="rank">Rank:</label>
+    <input type="text" id="rank" th:field="*{rank}" />
+
+    <button type="submit">Cadastrar Ninja</button>
+  </form>
+</div>
+<a href="/ninjas/ui/listar">voltar para a lista de ninjas</a>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalhe do Ninjas</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+div {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+a:hover {
+    background: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+<h1>Detalhe do ninja</h1>
+<div>
+    <h2 th:text="${ninja.nome}"></h2>
+    <p><strong>Email:</strong> <span th:text="${ninja.email}"></span></p>
+    <p><strong>Idade:</strong> <span th:text="${ninja.idade}"></span></p>
+    <p><strong>Rank:</strong> <span th:text="${ninja.rank}"></span></p>
+
+    <h3>Missoes:</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Dificuldade</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="missao: ${ninja.missoes}">
+            <td th:text="${missao.nomeDaMissao}"></td>
+            <td th:text="${missao.dificuldade}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<a href="/ninjas/ui/listar">voltar para a lista de ninjas</a>
+</body>
+</html>
