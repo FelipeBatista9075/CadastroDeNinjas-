@@ -3,26 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lista de Missoes</title>
+    <title>Lista de Missoes</title>\
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        thead {
+            background-color: #4a90e2;
+            color: #fff;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        td a {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4a90e2;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        td a:hover {
+            background-color: #357ab7;
+        }
+
+        td a.delete {
+            background-color: #e74c3c;
+        }
+
+        td a.delete:hover {
+            background-color: #c0392b;
+        }
+
+        td a.add, td a.ninjas {
+            background-color: #2ecc71;
+        }
+
+        td a.add:hover, td a.ninjas:hover {
+            background-color: #27ae60;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background-color: #357ab7;
+        }
+    </style>
 </head>
 <body>
 
 <h1>Lista de missoes</h1>
 <table>
     <thead>
-    <tr>ID</tr>
-    <tr>nomeDaMissao</tr>
-    <tr>dificuldade</tr>
-    <tr>rank</tr>
+    <tr>
+        <td>ID</td>
+        <td>Nome da missao</td>
+        <td>Dificuldade</td>
+        <td>Ninjas</td>
+    </tr>
     </thead>
     <tbody>
     <tr th:each="missao: ${missoes}">
-        <td></td>
         <td th:text="${missao.id}"></td>
         <td th:text="${missao.nomeDaMissao}"></td>
         <td th:text="${missao.dificuldade}"></td>
-        <td th:text="${missao.ninjas}"></td>
+        <td>
+        </td>
+
+        <td>
+            <a th:href="@{/missoes/ui/listar/{id}(id=${missao.id})}">Ver Detalhes</a>
+            <a th:href="@{/missoes/ui/#/{id}(id=${missao.id})}">Alterar</a>
+            <a th:href="@{/missoes/ui/deletar/{id}(id=${missao.id})}">Deletar</a>
+        </td>
     </tr>
+    </tbody>
+    <tbody>
+    <td>
+        <a th:href="@{/missoes/ui/adicionar}">Adicionar</a>
+        <a th:href="@{/ninjas/ui/listar}">Ninjas</a>
+    </td>
     </tbody>
 </table>
 </body>

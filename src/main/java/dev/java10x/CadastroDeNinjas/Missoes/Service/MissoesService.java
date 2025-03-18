@@ -39,7 +39,7 @@ public class MissoesService {
 
     }
 
-    public void deletar(long id){
+    public void deletar(Long id){
         missoesRepository.deleteById(id);
     }
 
