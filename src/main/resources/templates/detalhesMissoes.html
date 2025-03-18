@@ -1,0 +1,94 @@
+<!
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Detalhe da Missao</title>
+    <style>
+        {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+
+       body {
+           font-family: Arial, sans-serif;
+           line-height: 1.6;
+           background-color: #f4f4f4;
+           padding: 20px;
+       }
+
+       h1 {
+           text-align: center;
+           color: #333;
+           margin-bottom: 20px;
+       }
+
+       h2 {
+           color: #2c3e50;
+           margin-bottom: 10px;
+       }
+
+       div {
+           background-color: #ffffff;
+           padding: 20px;
+           border-radius: 8px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           margin-bottom: 20px;
+       }
+
+       p {
+           margin-bottom: 10px;
+           font-size: 1.1em;
+       }
+
+       strong {
+           font-weight: bold;
+           color: #34495e;
+       }
+
+       span {
+           color: #7f8c8d;
+       }
+
+       .ninjas-list {
+           list-style-type: none;
+           padding-left: 0;
+       }
+
+       .ninjas-list li {
+           background-color: #ecf0f1;
+           margin: 5px 0;
+           padding: 8px;
+           border-radius: 4px;
+       }
+
+       a {
+           display: inline-block;
+           margin-top: 20px;
+           padding: 10px 20px;
+           background-color: #3498db;
+           color: white;
+           text-decoration: none;
+           border-radius: 4px;
+           transition: background-color 0.3s ease;
+       }
+
+       a:hover {
+           background-color: #2980b9;
+       }
+    </style>
+</head>
+<body>
+<h1>Detalhe da Missao</h1>
+<div>
+    <h2 th:text="${missao.nomeDaMissao}"></h2>
+    <p><strong>id:</strong> <span th:text="${missao.id}"></span></p>
+    <p><strong>dificuldade:</strong> <span th:text="${missao.dificuldade}"></span></p>
+    <ul class="ninjas-list">
+        <li th:each="ninja : ${missao.ninjas}" th:text="${ninja.nome}"></li>
+    </ul>
+</div>
+<a href="/missoes/ui/listar">voltar para a lista de ninjas</a>
+</body>
+</html>
