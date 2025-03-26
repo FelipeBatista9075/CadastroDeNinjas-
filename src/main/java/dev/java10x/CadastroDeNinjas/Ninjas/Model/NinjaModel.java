@@ -6,7 +6,6 @@ import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @ToString(exclude = "missoes")
 //ele transforma uma classe em uma entidade no DB
 @Entity
@@ -30,7 +29,59 @@ public class NinjaModel {
     @JoinColumn(name = "missoes_id") //Foreing Key
     private MissoesModel missoes;
 
+    public Long getId() {
+        return id;
+    }
+
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public String getRank() {
+        return Rank;
+    }
+
+    public void setRank(String rank) {
+        Rank = rank;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public MissoesModel getMissoes() {
+        return missoes;
+    }
+
+    public void setMissoes(MissoesModel missoes) {
+        this.missoes = missoes;
     }
 }

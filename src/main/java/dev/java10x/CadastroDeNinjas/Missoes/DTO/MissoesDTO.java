@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class MissoesDTO {
@@ -17,4 +16,36 @@ public class MissoesDTO {
     private String nomeDaMissao;
     private RankMissoes dificuldade;
     private List<NinjaModel> ninjas;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNomeDaMissao() {
+        return nomeDaMissao;
+    }
+
+    public void setNomeDaMissao(String nomeDaMissao) {
+        this.nomeDaMissao = nomeDaMissao;
+    }
+
+    public RankMissoes getDificuldade() {
+        return dificuldade;
+    }
+
+    public void setDificuldade(RankMissoes dificuldade) {
+        this.dificuldade = dificuldade;
+    }
+
+    public List<NinjaModel> getNinjas() {
+        return ninjas;
+    }
+
+    public void setNinjas(List<NinjaModel> ninjas) {
+        this.ninjas = ninjas;
+    }
 }

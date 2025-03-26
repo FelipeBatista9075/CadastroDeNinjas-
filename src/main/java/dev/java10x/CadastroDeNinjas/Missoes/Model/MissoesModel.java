@@ -10,7 +10,6 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @ToString
 
 @Entity
@@ -26,7 +25,35 @@ public class MissoesModel {
     @JsonIgnore
     private List<NinjaModel> ninjas;
 
+    public Long getId() {
+        return id;
+    }
+
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNomeDaMissao() {
+        return nomeDaMissao;
+    }
+
+    public void setNomeDaMissao(String nomeDaMissao) {
+        this.nomeDaMissao = nomeDaMissao;
+    }
+
+    public RankMissoes getDificuldade() {
+        return dificuldade;
+    }
+
+    public void setDificuldade(RankMissoes dificuldade) {
+        this.dificuldade = dificuldade;
+    }
+
+    public List<NinjaModel> getNinjas() {
+        return ninjas;
+    }
+
+    public void setNinjas(List<NinjaModel> ninjas) {
+        this.ninjas = ninjas;
     }
 }
